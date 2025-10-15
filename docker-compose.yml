@@ -1,0 +1,15 @@
+services:
+  docling-proxy:
+    build: .
+    container_name: docling-proxy
+    networks:
+      - proxy 
+    environment:
+      - PYTHONUNBUFFERED=1
+      - GWDG_API_URL=https://chat-ai.academiccloud.de/v1/documents/convert
+      - GWDG_API_KEY=${GWDG_API_KEY}
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true

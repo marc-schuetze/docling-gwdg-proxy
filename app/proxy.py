@@ -34,7 +34,7 @@ from fastapi.responses import JSONResponse
 from typing import Optional
 
 GWDG_API_URL = os.getenv("GWDG_API_URL", "https://chat-ai.academiccloud.de/v1/documents/convert")
-GWDG_API_KEY = os.getenv("GWDG_API_ KEY", "")
+GWDG_API_KEY = os.getenv("GWDG_API_KEY", "")
 
 if not GWDG_API_KEY:
     print("WARNING: GWDG_API_KEY not set")

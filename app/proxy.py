@@ -127,6 +127,14 @@ async def root():
         "gwdg_configured": bool(GWDG_API_KEY)
     }
 
+# Arbitrary version-return, I chose the latest (at writing) docling-serve version
+@app.get("/version")
+async def version():
+    return {
+        "docling-serve": "1.38.2",
+        "docling": "gwdg-proxy",
+        "version": "1.38.2",
+    }
 
 if __name__ == "__main__":
     import uvicorn
